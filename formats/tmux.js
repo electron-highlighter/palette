@@ -1,6 +1,6 @@
 module.exports = function render(p) {
   const { base, roles } = p
-  const vars = `# electron_highlighter_day theme
+  const vars = `# ${p.slug.replace(/-/g, '_')} theme
 tmux_thm_fg="${base.foreground}"
 tmux_thm_bg="${base.background}"
 tmux_thm_black="${base.lightGray}"

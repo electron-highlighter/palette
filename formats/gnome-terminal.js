@@ -7,10 +7,10 @@ module.exports = function render(p) {
   const bg = base.background
   const fg = base.foreground
   return `#!/usr/bin/env bash
-# Electron Highlighter Day - Gnome Terminal color scheme install script
+# ${p.name} - Gnome Terminal color scheme install script
 
-[[ -z "$PROFILE_NAME" ]] && PROFILE_NAME="electron-highlighter-day"
-[[ -z "$PROFILE_SLUG" ]] && PROFILE_SLUG="electron-highlighter-day"
+[[ -z "$PROFILE_NAME" ]] && PROFILE_NAME="${p.slug}"
+[[ -z "$PROFILE_SLUG" ]] && PROFILE_SLUG="${p.slug}"
 [[ -z "$DCONF" ]] && DCONF=dconf
 [[ -z "$UUIDGEN" ]] && UUIDGEN=uuidgen
 

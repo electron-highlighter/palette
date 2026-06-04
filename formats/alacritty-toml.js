@@ -3,7 +3,7 @@
 // light-terminal convention. base.* drives the non-ANSI primary/cursor/selection.
 module.exports = function render(p) {
   const { ansi, base } = p
-  return `# Colors (Electron Highlighter Day)
+  return `# Colors (${p.name})
 
 [colors.bright]
 black = '${ansi[8]}'

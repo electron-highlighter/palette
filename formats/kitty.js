@@ -2,7 +2,7 @@ module.exports = function render(p) {
   const { ansi, base, accents, roles } = p
   const head = `# vim:ft=kitty
 
-## name: Electron Highlighter Day
+## name: ${p.name}
 ## license: MIT
 ## author: Mike McBride
 ## upstream: https://github.com/electron-highlighter/kitty
