@@ -1,0 +1,32 @@
+# Electron Highlighter Day Alacritty Colors
+colors:
+  # Default colors
+  primary:
+    background: '0xeef0f5'
+    foreground: '0x2f3b54'
+
+  # Normal colors
+  normal:
+    black:   '0xc2c6d4'
+    red:     '0xf52a65'
+    green:   '0x10a877'
+    yellow:  '0xd18a16'
+    blue:    '0x366ff0'
+    magenta: '0x8b4fe0'
+    cyan:    '0x0a9fbf'
+    white:   '0x59647e'
+
+  # Bright colors
+  bright:
+    black:   '0x7b88a8'
+    red:     '0xf52a65'
+    green:   '0x10a877'
+    yellow:  '0xd18a16'
+    blue:    '0x366ff0'
+    magenta: '0x8b4fe0'
+    cyan:    '0x0a9fbf'
+    white:   '0x2f3b54'
+
+  indexed_colors:
+    - { index: 16, color: '0xf0633c' }
+    - { index: 17, color: '0xf52a65' }
