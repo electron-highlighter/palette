@@ -7,6 +7,7 @@ const targets = [
   { name: 'kitty', dest: '../kitty/electron_highlighter_day.conf', render: require('./formats/kitty') },
   { name: 'tmux', dest: '../tmux/electron_highlighter_day.conf', render: require('./formats/tmux') },
   { name: 'hyper', dest: '../hyper/electron-highlighter-day.js', render: require('./formats/hyper') },
+  { name: 'iterm', dest: '../terminal/electron-day.itermcolors', render: require('./formats/iterm') },
 ]
 
 module.exports = { palette, targets }
