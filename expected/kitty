@@ -1,0 +1,48 @@
+# vim:ft=kitty
+
+## name: Electron Highlighter Day
+## license: MIT
+## author: Mike McBride
+## upstream: https://github.com/electron-highlighter/kitty
+
+background #eef0f5
+foreground #2f3b54
+selection_background #d6def5
+selection_foreground #2f3b54
+url_color #0a9fbf
+cursor #2f3b54
+cursor_text_color #eef0f5
+
+# Tabs
+active_tab_background #366ff0
+active_tab_foreground #eef0f5
+inactive_tab_background #e4e7ee
+inactive_tab_foreground #59647e
+
+# Windows
+active_border_color #366ff0
+inactive_border_color #c2c6d4
+
+# normal
+color0 #c2c6d4
+color1 #f52a65
+color2 #10a877
+color3 #d18a16
+color4 #366ff0
+color5 #8b4fe0
+color6 #0a9fbf
+color7 #59647e
+
+# bright
+color8 #7b88a8
+color9 #f52a65
+color10 #10a877
+color11 #d18a16
+color12 #366ff0
+color13 #8b4fe0
+color14 #0a9fbf
+color15 #2f3b54
+
+# extended colors
+color16 #f0633c
+color17 #f52a65
