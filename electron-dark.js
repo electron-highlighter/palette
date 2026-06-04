@@ -21,7 +21,7 @@ const accents = {
   cyan: '#57f9ff',
   blue: '#82aaff',
   purple: '#d2a6ef',
-  pink: '#ff75a0', // unused by renderers; chosen complement to red/purple
+  pink: '#ff007c', // emitted by the fish theme (keyword/escape); the project's dark pink
 }
 
 // ANSI 0-17, from the ghostty reference palette. Conventional dark mapping:

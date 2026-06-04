@@ -22,9 +22,9 @@ const formats = [
     dest: { day: '../terminal/gnome-terminal-day.sh', dark: '../terminal/gnome-terminal.sh' } },
   { name: 'linux-console', render: require('./formats/linux-console'),
     dest: { day: '../terminal/linux-console-day.sh', dark: '../terminal/linux-console.sh' } },
+  { name: 'fish', render: require('./formats/fish'),
+    dest: { day: '../fish/electron-highlighter-day.fish', dark: '../fish/electron-highlighter.fish' } },
 ]
-
-const variants = { day, dark }
 
 // Build the flat target list. Day targets keep their bare format name (so the
 // existing goldens are unchanged); dark targets get a `-dark` suffix.
