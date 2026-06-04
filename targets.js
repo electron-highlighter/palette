@@ -34,4 +34,6 @@ for (const f of formats) {
   targets.push({ name: `${f.name}-dark`, render: f.render, palette: dark, dest: f.dest.dark })
 }
 
+targets.push({ name: 'zed', render: require('./formats/zed'), palette: day, dest: '../zed/themes/electron-highlighter-day.json' })
+
 module.exports = { day, dark, targets }
