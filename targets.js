@@ -10,6 +10,7 @@ const targets = [
   { name: 'iterm', dest: '../terminal/electron-day.itermcolors', render: require('./formats/iterm') },
   { name: 'gnome-terminal', dest: '../terminal/gnome-terminal-day.sh', render: require('./formats/gnome-terminal') },
   { name: 'linux-console', dest: '../terminal/linux-console-day.sh', render: require('./formats/linux-console') },
+  { name: 'fish', dest: '../fish/electron-highlighter-day.fish', render: require('./formats/fish') },
 ]
 
 module.exports = { palette, targets }
