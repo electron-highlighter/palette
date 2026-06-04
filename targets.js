@@ -9,6 +9,7 @@ const targets = [
   { name: 'hyper', dest: '../hyper/electron-highlighter-day.js', render: require('./formats/hyper') },
   { name: 'iterm', dest: '../terminal/electron-day.itermcolors', render: require('./formats/iterm') },
   { name: 'gnome-terminal', dest: '../terminal/gnome-terminal-day.sh', render: require('./formats/gnome-terminal') },
+  { name: 'linux-console', dest: '../terminal/linux-console-day.sh', render: require('./formats/linux-console') },
 ]
 
 module.exports = { palette, targets }
