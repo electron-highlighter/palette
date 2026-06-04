@@ -13,7 +13,7 @@ tmux_thm_time="${roles.tmuxTime}"
 tmux_thm_message="${roles.tmuxMessage}"
 `
   const body = `
-# statu:
+# status:
 set -gq status "on"
 set -gq status-bg "\${tmux_thm_bg}"
 set -gq status-justify "left"

@@ -10,6 +10,16 @@ colors:
     background: '${x(base.background)}'
     foreground: '${x(base.foreground)}'
 
+  # Cursor colors
+  cursor:
+    cursor: '${x(base.cursor)}'
+    text:   '${x(base.cursorText)}'
+
+  # Selection colors
+  selection:
+    background: '${x(base.selection)}'
+    text:       '${x(base.foreground)}'
+
   # Normal colors
   normal:
     black:   '${x(ansi[0])}'

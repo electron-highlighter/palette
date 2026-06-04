@@ -10,7 +10,7 @@ tmux_thm_dir="#8b4fe0"
 tmux_thm_time="#0a9fbf"
 tmux_thm_message="#10a877"
 
-# statu:
+# status:
 set -gq status "on"
 set -gq status-bg "${tmux_thm_bg}"
 set -gq status-justify "left"

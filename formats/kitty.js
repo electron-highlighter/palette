@@ -19,7 +19,7 @@ cursor_text_color ${base.cursorText}
 active_tab_background ${accents.blue}
 active_tab_foreground ${base.background}
 inactive_tab_background ${roles.hyperTabNavBg}
-inactive_tab_foreground ${base.dim}
+inactive_tab_foreground ${roles.hyperTabText}
 
 # Windows
 active_border_color ${accents.blue}

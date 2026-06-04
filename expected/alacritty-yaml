@@ -5,6 +5,16 @@ colors:
     background: '0xeef0f5'
     foreground: '0x2f3b54'
 
+  # Cursor colors
+  cursor:
+    cursor: '0x2f3b54'
+    text:   '0xeef0f5'
+
+  # Selection colors
+  selection:
+    background: '0xd6def5'
+    text:       '0x2f3b54'
+
   # Normal colors
   normal:
     black:   '0xc2c6d4'
