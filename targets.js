@@ -1,16 +1,37 @@
-const palette = require('./electron-day')
+const day = require('./electron-day')
+const dark = require('./electron-dark')
 
-const targets = [
-  { name: 'alacritty-toml', dest: '../alacritty/electron-highlighter-day.toml', render: require('./formats/alacritty-toml') },
-  { name: 'alacritty-yaml', dest: '../alacritty/electron_highlighter_day.yml', render: require('./formats/alacritty-yaml') },
-  { name: 'ghostty', dest: '../ghostty/electron-highlighter-day', render: require('./formats/ghostty') },
-  { name: 'kitty', dest: '../kitty/electron_highlighter_day.conf', render: require('./formats/kitty') },
-  { name: 'tmux', dest: '../tmux/electron_highlighter_day.conf', render: require('./formats/tmux') },
-  { name: 'hyper', dest: '../hyper/electron-highlighter-day.js', render: require('./formats/hyper') },
-  { name: 'iterm', dest: '../terminal/electron-day.itermcolors', render: require('./formats/iterm') },
-  { name: 'gnome-terminal', dest: '../terminal/gnome-terminal-day.sh', render: require('./formats/gnome-terminal') },
-  { name: 'linux-console', dest: '../terminal/linux-console-day.sh', render: require('./formats/linux-console') },
-  { name: 'fish', dest: '../fish/electron-highlighter-day.fish', render: require('./formats/fish') },
+// One entry per format. `dest` maps each variant to its output path in that
+// terminal's repo (paths are relative to this file via generate.js).
+const formats = [
+  { name: 'alacritty-toml', render: require('./formats/alacritty-toml'),
+    dest: { day: '../alacritty/electron-highlighter-day.toml', dark: '../alacritty/electron-highlighter.toml' } },
+  { name: 'alacritty-yaml', render: require('./formats/alacritty-yaml'),
+    dest: { day: '../alacritty/electron_highlighter_day.yml', dark: '../alacritty/electron_highlighter.yml' } },
+  { name: 'ghostty', render: require('./formats/ghostty'),
+    dest: { day: '../ghostty/electron-highlighter-day', dark: '../ghostty/electron-highlighter' } },
+  { name: 'kitty', render: require('./formats/kitty'),
+    dest: { day: '../kitty/electron_highlighter_day.conf', dark: '../kitty/electron_highlighter.conf' } },
+  { name: 'tmux', render: require('./formats/tmux'),
+    dest: { day: '../tmux/electron_highlighter_day.conf', dark: '../tmux/electron_highlighter.conf' } },
+  { name: 'hyper', render: require('./formats/hyper'),
+    dest: { day: '../hyper/electron-highlighter-day.js', dark: '../hyper/electron-highlighter.js' } },
+  { name: 'iterm', render: require('./formats/iterm'),
+    dest: { day: '../terminal/electron-day.itermcolors', dark: '../terminal/electron.itermcolors' } },
+  { name: 'gnome-terminal', render: require('./formats/gnome-terminal'),
+    dest: { day: '../terminal/gnome-terminal-day.sh', dark: '../terminal/gnome-terminal.sh' } },
+  { name: 'linux-console', render: require('./formats/linux-console'),
+    dest: { day: '../terminal/linux-console-day.sh', dark: '../terminal/linux-console.sh' } },
 ]
 
-module.exports = { palette, targets }
+const variants = { day, dark }
+
+// Build the flat target list. Day targets keep their bare format name (so the
+// existing goldens are unchanged); dark targets get a `-dark` suffix.
+const targets = []
+for (const f of formats) {
+  targets.push({ name: f.name, render: f.render, palette: day, dest: f.dest.day })
+  targets.push({ name: `${f.name}-dark`, render: f.render, palette: dark, dest: f.dest.dark })
+}
+
+module.exports = { day, dark, targets }
