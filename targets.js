@@ -8,6 +8,7 @@ const targets = [
   { name: 'tmux', dest: '../tmux/electron_highlighter_day.conf', render: require('./formats/tmux') },
   { name: 'hyper', dest: '../hyper/electron-highlighter-day.js', render: require('./formats/hyper') },
   { name: 'iterm', dest: '../terminal/electron-day.itermcolors', render: require('./formats/iterm') },
+  { name: 'gnome-terminal', dest: '../terminal/gnome-terminal-day.sh', render: require('./formats/gnome-terminal') },
 ]
 
 module.exports = { palette, targets }
