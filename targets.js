@@ -6,6 +6,7 @@ const targets = [
   { name: 'ghostty', dest: '../ghostty/electron-highlighter-day', render: require('./formats/ghostty') },
   { name: 'kitty', dest: '../kitty/electron_highlighter_day.conf', render: require('./formats/kitty') },
   { name: 'tmux', dest: '../tmux/electron_highlighter_day.conf', render: require('./formats/tmux') },
+  { name: 'hyper', dest: '../hyper/electron-highlighter-day.js', render: require('./formats/hyper') },
 ]
 
 module.exports = { palette, targets }
