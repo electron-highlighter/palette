@@ -49,4 +49,23 @@ const roles = {
   hyperLink: accents.cyan,
 }
 
-module.exports = { name: 'Electron Highlighter', slug: 'electron-highlighter', base, accents, ansi, roles }
+const ui = {
+  surface: '#232536',
+  elementBg: '#1f2335',
+  elementHover: '#2a2f45',
+  elementActive: '#30364d',
+  elementSelected: '#2e3c5f',
+  border: '#141820',
+  borderVariant: '#363c46',
+  borderDisabled: '#414754',
+  titleBarInactive: '#2e343e',
+  lineNumber: '#506686',
+  activeLineNumber: '#7c8eac',
+  textBright: '#c5cee0',
+  gitAddedBorder: '#3bd19b',
+  gitModifiedBorder: '#a17d57',
+  gitDeletedBorder: '#a6374a',
+  infoBorder: '#293b5b',
+}
+
+module.exports = { name: 'Electron Highlighter', slug: 'electron-highlighter', base, accents, ansi, roles, ui }

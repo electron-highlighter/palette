@@ -49,4 +49,23 @@ const roles = {
   hyperLink: accents.cyan,
 }
 
-module.exports = { name: 'Electron Highlighter Day', slug: 'electron-highlighter-day', base, accents, ansi, roles }
+const ui = {
+  surface: '#e4e7ee',
+  elementBg: '#e7eaf0',
+  elementHover: '#dde3ee',
+  elementActive: '#d3dcee',
+  elementSelected: '#cdd9f5',
+  border: '#d3d8e3',
+  borderVariant: '#c2c6d4',
+  borderDisabled: '#c2c6d4',
+  titleBarInactive: '#e7eaf0',
+  lineNumber: '#aab4c6',
+  activeLineNumber: '#59647e',
+  textBright: '#1f2733',
+  gitAddedBorder: '#0c8f64',
+  gitModifiedBorder: '#a8761f',
+  gitDeletedBorder: '#c01f4d',
+  infoBorder: '#2f5fd0',
+}
+
+module.exports = { name: 'Electron Highlighter Day', slug: 'electron-highlighter-day', base, accents, ansi, roles, ui }

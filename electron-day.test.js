@@ -36,3 +36,14 @@ for (const palette of [day, dark]) {
 test('Day red is keyed to TokyoNight Day', () => {
   assert.strictEqual(day.accents.red, '#f52a65')
 })
+
+const UI_KEYS = ['surface','elementBg','elementHover','elementActive','elementSelected','border','borderVariant','borderDisabled','titleBarInactive','lineNumber','activeLineNumber','textBright','gitAddedBorder','gitModifiedBorder','gitDeletedBorder','infoBorder']
+
+for (const [label, p] of [['day', day], ['dark', dark]]) {
+  test(`${label} palette has a complete ui section of valid hex`, () => {
+    assert.ok(p.ui, `${label}.ui missing`)
+    for (const k of UI_KEYS) {
+      assert.match(p.ui[k], /^#[0-9a-f]{6}$/, `${label}.ui.${k} invalid`)
+    }
+  })
+}
