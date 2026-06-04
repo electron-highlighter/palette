@@ -6,7 +6,7 @@ const h = (hex) => hex.slice(1)
 
 module.exports = function render(p) {
   const { base, accents } = p
-  return `# Electron Highlighter Day Color Palette
+  return `# ${p.name} Color Palette
 set -l foreground ${h(base.foreground)}
 set -l selection ${h(base.selection)}
 set -l comment ${h(base.comment)}

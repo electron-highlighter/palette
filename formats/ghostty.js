@@ -1,6 +1,6 @@
 module.exports = function render(p) {
   const { ansi, base } = p
-  const lines = ['# Electron Highlighter Day',
+  const lines = [`# ${p.name}`,
     `background = ${base.background}`,
     `foreground = ${base.foreground}`,
     `selection-background = ${base.selection}`,

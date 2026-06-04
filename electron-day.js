@@ -49,4 +49,4 @@ const roles = {
   hyperLink: accents.cyan,
 }
 
-module.exports = { name: 'Electron Highlighter Day', base, accents, ansi, roles }
+module.exports = { name: 'Electron Highlighter Day', slug: 'electron-highlighter-day', base, accents, ansi, roles }

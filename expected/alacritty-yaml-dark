@@ -1,0 +1,42 @@
+# Electron Highlighter Alacritty Colors
+colors:
+  # Default colors
+  primary:
+    background: '0x24283b'
+    foreground: '0xa8b5d1'
+
+  # Cursor colors
+  cursor:
+    cursor: '0xa8b5d1'
+    text:   '0x1a1b26'
+
+  # Selection colors
+  selection:
+    background: '0x283457'
+    text:       '0xa8b5d1'
+
+  # Normal colors
+  normal:
+    black:   '0x15161e'
+    red:     '0xf7768e'
+    green:   '0x58ffc7'
+    yellow:  '0xffd9af'
+    blue:    '0x82aaff'
+    magenta: '0xd2a6ef'
+    cyan:    '0x57f9ff'
+    white:   '0x7c8eac'
+
+  # Bright colors
+  bright:
+    black:   '0x506686'
+    red:     '0xff93a7'
+    green:   '0x58ffc7'
+    yellow:  '0xffd9af'
+    blue:    '0x82aaff'
+    magenta: '0xd2a6ef'
+    cyan:    '0x57f9ff'
+    white:   '0xc5cee0'
+
+  indexed_colors:
+    - { index: 16, color: '0xffbf7a' }
+    - { index: 17, color: '0xffd9af' }

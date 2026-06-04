@@ -3,7 +3,7 @@ const x = (hex) => '0x' + hex.slice(1)
 
 module.exports = function render(p) {
   const { ansi, base } = p
-  return `# Electron Highlighter Day Alacritty Colors
+  return `# ${p.name} Alacritty Colors
 colors:
   # Default colors
   primary:

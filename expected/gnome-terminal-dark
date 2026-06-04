@@ -1,16 +1,8 @@
-module.exports = function render(p) {
-  const { ansi, base } = p
-  const list = []
-  for (let i = 0; i <= 15; i++) list.push(ansi[i])
-  const dconfPalette = "[" + list.map((c) => `'${c}'`).join(', ') + "]"
-  const gconfPalette = list.join(':')
-  const bg = base.background
-  const fg = base.foreground
-  return `#!/usr/bin/env bash
-# ${p.name} - Gnome Terminal color scheme install script
+#!/usr/bin/env bash
+# Electron Highlighter - Gnome Terminal color scheme install script
 
-[[ -z "$PROFILE_NAME" ]] && PROFILE_NAME="${p.slug}"
-[[ -z "$PROFILE_SLUG" ]] && PROFILE_SLUG="${p.slug}"
+[[ -z "$PROFILE_NAME" ]] && PROFILE_NAME="electron-highlighter"
+[[ -z "$PROFILE_SLUG" ]] && PROFILE_SLUG="electron-highlighter"
 [[ -z "$DCONF" ]] && DCONF=dconf
 [[ -z "$UUIDGEN" ]] && UUIDGEN=uuidgen
 
@@ -32,9 +24,9 @@ dlist_append() {
 
     local entries="$(
         {
-            "$DCONF" read "$key" | tr -d '[]' | tr , "\\n" | fgrep -v "$val"
+            "$DCONF" read "$key" | tr -d '[]' | tr , "\n" | fgrep -v "$val"
             echo "'$val'"
-        } | head -c-1 | tr "\\n" ,
+        } | head -c-1 | tr "\n" ,
     )"
 
     "$DCONF" write "$key" "[$entries]"
@@ -44,15 +36,15 @@ dlist_append() {
 if which "$DCONF" > /dev/null 2>&1; then
     [[ -z "$BASE_KEY_NEW" ]] && BASE_KEY_NEW=/org/gnome/terminal/legacy/profiles:
 
-    if [[ -n "\`$DCONF list $BASE_KEY_NEW/\`" ]]; then
+    if [[ -n "`$DCONF list $BASE_KEY_NEW/`" ]]; then
         if which "$UUIDGEN" > /dev/null 2>&1; then
-            PROFILE_SLUG=\`uuidgen\`
+            PROFILE_SLUG=`uuidgen`
         fi
 
-        if [[ -n "\`$DCONF read $BASE_KEY_NEW/default\`" ]]; then
-            DEFAULT_SLUG=\`$DCONF read $BASE_KEY_NEW/default | tr -d \\'\`
+        if [[ -n "`$DCONF read $BASE_KEY_NEW/default`" ]]; then
+            DEFAULT_SLUG=`$DCONF read $BASE_KEY_NEW/default | tr -d \'`
         else
-            DEFAULT_SLUG=\`$DCONF list $BASE_KEY_NEW/ | grep '^:' | head -n1 | tr -d :/\`
+            DEFAULT_SLUG=`$DCONF list $BASE_KEY_NEW/ | grep '^:' | head -n1 | tr -d :/`
         fi
 
         DEFAULT_KEY="$BASE_KEY_NEW/:$DEFAULT_SLUG"
@@ -66,10 +58,10 @@ if which "$DCONF" > /dev/null 2>&1; then
 
         # update profile values with theme options
         dset visible-name "'$PROFILE_NAME'"
-        dset palette "${dconfPalette}"
-        dset background-color "'${bg}'"
-        dset foreground-color "'${fg}'"
-        dset bold-color "'${fg}'"
+        dset palette "['#15161e', '#f7768e', '#58ffc7', '#ffd9af', '#82aaff', '#d2a6ef', '#57f9ff', '#7c8eac', '#506686', '#ff93a7', '#58ffc7', '#ffd9af', '#82aaff', '#d2a6ef', '#57f9ff', '#c5cee0']"
+        dset background-color "'#24283b'"
+        dset foreground-color "'#a8b5d1'"
+        dset bold-color "'#a8b5d1'"
         dset bold-color-same-as-fg "true"
         dset use-theme-colors "false"
         dset use-theme-background "false"
@@ -104,9 +96,9 @@ glist_append() {
 
     local entries="$(
         {
-            "$GCONFTOOL" --get "$key" | tr -d '[]' | tr , "\\n" | fgrep -v "$val"
+            "$GCONFTOOL" --get "$key" | tr -d '[]' | tr , "\n" | fgrep -v "$val"
             echo "$val"
-        } | head -c-1 | tr "\\n" ,
+        } | head -c-1 | tr "\n" ,
     )"
 
     "$GCONFTOOL" --set --type list --list-type $type "$key" "[$entries]"
@@ -116,10 +108,10 @@ glist_append() {
 glist_append string /apps/gnome-terminal/global/profile_list "$PROFILE_SLUG"
 
 gset string visible_name "$PROFILE_NAME"
-gset string palette "${gconfPalette}"
-gset string background_color "${bg}"
-gset string foreground_color "${fg}"
-gset string bold_color "${fg}"
+gset string palette "#15161e:#f7768e:#58ffc7:#ffd9af:#82aaff:#d2a6ef:#57f9ff:#7c8eac:#506686:#ff93a7:#58ffc7:#ffd9af:#82aaff:#d2a6ef:#57f9ff:#c5cee0"
+gset string background_color "#24283b"
+gset string foreground_color "#a8b5d1"
+gset string bold_color "#a8b5d1"
 gset bool   bold_color_same_as_fg "true"
 gset bool   use_theme_colors "false"
 gset bool   use_theme_background "false"
@@ -128,5 +120,3 @@ unset PROFILE_NAME
 unset PROFILE_SLUG
 unset DCONF
 unset UUIDGEN
-`
-}
