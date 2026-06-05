@@ -24,6 +24,8 @@ const formats = [
     dest: { day: '../terminal/linux-console-day.sh', dark: '../terminal/linux-console.sh' } },
   { name: 'fish', render: require('./formats/fish'),
     dest: { day: '../fish/electron-highlighter-day.fish', dark: '../fish/electron-highlighter.fish' } },
+  { name: 'vscode', render: require('./formats/vscode'),
+    dest: { day: '../vscode/config/colors-light.js', dark: '../vscode/config/colors.js' } },
 ]
 
 // Build the flat target list. Day targets keep their bare format name (so the
@@ -35,5 +37,9 @@ for (const f of formats) {
 }
 
 targets.push({ name: 'zed', render: require('./formats/zed'), palette: day, dest: '../zed/themes/electron-highlighter-day.json' })
+
+// Neovim emits a single colors.lua holding all three variants (default, night,
+// day), so it gets both palettes and is registered as one target.
+targets.push({ name: 'nvim', render: require('./formats/nvim'), palette: { day, dark }, dest: '../nvim/lua/electron_highlighter/colors.lua' })
 
 module.exports = { day, dark, targets }

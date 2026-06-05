@@ -1,0 +1,199 @@
+local util = require("electron_highlighter.util")
+
+local M = {}
+
+---@class Palette
+M.default = {
+  none = "NONE",
+  bg = "#24283b",
+  bg_dark = "#1f2335",
+  bg_highlight = "#37435C",
+  terminal_black = "#414868",
+  fg = "#a8b5d1",
+  fg_dark = "#99a3b8",
+  fg_gutter = "#3b4261",
+  comment = "#7586b3",
+  blue = "#82aaff",
+  cyan = "#5ce1ff",
+  orange = "#ffd1ad",
+  yellow = "#ffecb8",
+  green = "#58ffc7",
+  red = "#f7768e",
+  git = {
+    add = "#58ffc7",
+    change = "#ffecb8",
+    delete = "#f7768e",
+  },
+  gitSigns = {
+    add = "#58ffc7",
+    change = "#ffecb8",
+    delete = "#f7768e",
+  },
+  dark3 = "#545c7e",
+  dark5 = "#737aa2",
+  blue0 = "#3d59a1",
+  blue1 = "#22d3ee",
+  blue2 = "#06b6d4",
+  blue5 = "#7dd3fc",
+  blue6 = "#a5f3fc",
+  blue7 = "#375574",
+  magenta = "#d2a6ef",
+  magenta2 = "#ff007c",
+  teal = "#14b8a6",
+  green1 = "#34febb",
+  green2 = "#34febb",
+  red1 = "#ff5874",
+}
+
+M.night = {
+  none = "NONE",
+  bg = "#1b212c",
+  bg_dark = "#141820",
+  bg_highlight = "#37435C",
+  terminal_black = "#414868",
+  fg = "#a8b5d1",
+  fg_dark = "#99a3b8",
+  fg_gutter = "#3b4261",
+  comment = "#7586b3",
+  blue = "#82aaff",
+  cyan = "#5ce1ff",
+  orange = "#ffd1ad",
+  yellow = "#ffecb8",
+  green = "#58ffc7",
+  red = "#f7768e",
+  git = {
+    add = "#58ffc7",
+    change = "#ffecb8",
+    delete = "#f7768e",
+  },
+  gitSigns = {
+    add = "#58ffc7",
+    change = "#ffecb8",
+    delete = "#f7768e",
+  },
+  dark3 = "#545c7e",
+  dark5 = "#737aa2",
+  blue0 = "#3d59a1",
+  blue1 = "#22d3ee",
+  blue2 = "#06b6d4",
+  blue5 = "#7dd3fc",
+  blue6 = "#a5f3fc",
+  blue7 = "#375574",
+  magenta = "#d2a6ef",
+  magenta2 = "#ff007c",
+  teal = "#14b8a6",
+  green1 = "#34febb",
+  green2 = "#34febb",
+  red1 = "#ff5874",
+}
+
+-- Light variant — Electron Highlighter Day. Values from the canonical palette
+-- (electron-highlighter/palette: electron-day.js). Light-appropriate supporting
+-- shades (blue0-7, dark3/5) are tuned for a light background.
+M.day = {
+  none = "NONE",
+  bg = "#eef0f5",
+  bg_dark = "#e4e7ee",
+  bg_highlight = "#dde3ee",
+  terminal_black = "#c2c6d4",
+  fg = "#2f3b54",
+  fg_dark = "#59647e",
+  fg_gutter = "#aab4c6",
+  comment = "#7b88a8",
+  blue = "#366ff0",
+  cyan = "#0a9fbf",
+  orange = "#f0633c",
+  yellow = "#df8e1d",
+  green = "#10a877",
+  red = "#f52a65",
+  git = {
+    add = "#10a877",
+    change = "#df8e1d",
+    delete = "#f52a65",
+  },
+  gitSigns = {
+    add = "#10a877",
+    change = "#df8e1d",
+    delete = "#f52a65",
+  },
+  dark3 = "#aab4c6",
+  dark5 = "#8b95aa",
+  blue0 = "#c4d4f5",
+  blue1 = "#0a9fbf",
+  blue2 = "#2f6ee6",
+  blue5 = "#5f86e0",
+  blue6 = "#9bb5f5",
+  blue7 = "#b6c2e8",
+  magenta = "#8b4fe0",
+  magenta2 = "#e62b86",
+  teal = "#0e9488",
+  green1 = "#0c9b6e",
+  green2 = "#10a877",
+  red1 = "#e11d48",
+}
+
+---@return ColorScheme
+function M.setup(opts)
+  opts = opts or {}
+  local config = require("electron_highlighter.config")
+
+  local style = config.options.style
+  local palette = M[style] or {}
+  if type(palette) == "function" then
+    palette = palette()
+  end
+
+  -- Color Palette
+  ---@class ColorScheme: Palette
+  local colors = vim.tbl_deep_extend("force", vim.deepcopy(M.default), palette)
+
+  util.bg = colors.bg
+  util.fg = config.options.style == "day" and colors.fg or "#ffffff"
+  util.day_brightness = config.options.day_brightness
+
+  colors.diff = {
+    add = util.darken(colors.green2, 0.15),
+    delete = util.darken(colors.red1, 0.15),
+    change = util.darken(colors.blue7, 0.15),
+    text = colors.blue7,
+  }
+
+  colors.git.ignore = colors.dark3
+  local is_day = config.options.style == "day"
+  colors.black = is_day and "#1f2733" or util.darken(colors.bg, 0.8, "#000000")
+  colors.border_highlight = is_day and "#366ff0" or util.darken(colors.blue1, 0.8)
+  colors.border = is_day and "#d3d8e3" or colors.black
+
+  -- Popups and statusline always get a dark background
+  colors.bg_popup = colors.bg_dark
+  colors.bg_statusline = colors.bg
+
+  -- Sidebar and Floats are configurable
+  colors.bg_sidebar = config.options.styles.sidebars == "transparent" and colors.none
+      or config.options.styles.sidebars == "dark" and colors.bg_dark
+      or colors.bg
+
+  colors.bg_float = config.options.styles.floats == "transparent" and colors.none
+      or config.options.styles.floats == "dark" and colors.bg_dark
+      or colors.bg
+  colors.bg_visual = util.darken(colors.blue0, 0.4)
+  colors.bg_search = colors.blue0
+  colors.fg_sidebar = colors.fg_dark
+  -- colors.fg_float = config.options.styles.floats == "dark" and colors.fg_dark or colors.fg
+  colors.fg_float = colors.fg
+
+  colors.error = colors.red1
+  colors.warning = colors.yellow
+  colors.info = colors.blue2
+  colors.hint = colors.teal
+
+  colors.delta = {
+    add = util.darken(colors.green2, 0.45),
+    delete = util.darken(colors.red1, 0.45),
+  }
+
+  config.options.on_colors(colors)
+  return colors
+end
+
+return M
