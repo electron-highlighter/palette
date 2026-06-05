@@ -4,19 +4,19 @@ if [ "$TERM" = "linux" ]; then
   \e]P015161e
   \e]P1f7768e
   \e]P258ffc7
-  \e]P3ffd9af
+  \e]P3ffecb8
   \e]P482aaff
   \e]P5d2a6ef
-  \e]P657f9ff
-  \e]P77c8eac
-  \e]P8506686
+  \e]P65ce1ff
+  \e]P77586b3
+  \e]P84e5b88
   \e]P9ff93a7
   \e]PA58ffc7
-  \e]PBffd9af
+  \e]PBffecb8
   \e]PC82aaff
   \e]PDd2a6ef
-  \e]PE57f9ff
-  \e]PFc5cee0
+  \e]PE5ce1ff
+  \e]PFc5cde0
   "
   # get rid of artifacts
   clear

@@ -1,33 +1,33 @@
 # Colors (Electron Highlighter)
 
 [colors.bright]
-black = '#506686'
+black = '#4e5b88'
 blue = '#82aaff'
-cyan = '#57f9ff'
+cyan = '#5ce1ff'
 green = '#58ffc7'
 magenta = '#d2a6ef'
 red = '#ff93a7'
-white = '#c5cee0'
-yellow = '#ffd9af'
+white = '#c5cde0'
+yellow = '#ffecb8'
 
 [colors.cursor]
 cursor = '#a8b5d1'
-text = '#1a1b26'
+text = '#181b28'
 
 [colors.normal]
 black = '#15161e'
 blue = '#82aaff'
-cyan = '#57f9ff'
+cyan = '#5ce1ff'
 green = '#58ffc7'
 magenta = '#d2a6ef'
 red = '#f7768e'
-white = '#7c8eac'
-yellow = '#ffd9af'
+white = '#7586b3'
+yellow = '#ffecb8'
 
 [colors.primary]
 background = '#24283b'
 foreground = '#a8b5d1'
 
 [colors.selection]
-background = '#283457'
+background = '#2b3254'
 text = '#a8b5d1'

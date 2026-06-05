@@ -1,15 +1,15 @@
 # Electron Highlighter Color Palette
 set -l foreground a8b5d1
-set -l selection 283457
-set -l comment 7c8eac
+set -l selection 2b3254
+set -l comment 7586b3
 set -l red f7768e
-set -l orange ffbf7a
-set -l yellow ffd9af
+set -l orange ffd1ad
+set -l yellow ffecb8
 set -l green 58ffc7
 set -l blue 82aaff
 set -l purple d2a6ef
-set -l cyan 57f9ff
-set -l pink ff007c
+set -l cyan 5ce1ff
+set -l pink f4a8d8
 
 # Syntax Highlighting Colors
 set -g fish_color_normal $foreground

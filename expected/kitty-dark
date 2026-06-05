@@ -7,42 +7,42 @@
 
 background #24283b
 foreground #a8b5d1
-selection_background #283457
+selection_background #2b3254
 selection_foreground #a8b5d1
-url_color #57f9ff
+url_color #5ce1ff
 cursor #a8b5d1
-cursor_text_color #1a1b26
+cursor_text_color #181b28
 
 # Tabs
 active_tab_background #82aaff
 active_tab_foreground #24283b
-inactive_tab_background #1b212c
-inactive_tab_foreground #7c8eac
+inactive_tab_background #1b1e2c
+inactive_tab_foreground #7586b3
 
 # Windows
 active_border_color #82aaff
-inactive_border_color #1b212c
+inactive_border_color #1b1e2c
 
 # normal
 color0 #15161e
 color1 #f7768e
 color2 #58ffc7
-color3 #ffd9af
+color3 #ffecb8
 color4 #82aaff
 color5 #d2a6ef
-color6 #57f9ff
-color7 #7c8eac
+color6 #5ce1ff
+color7 #7586b3
 
 # bright
-color8 #506686
+color8 #4e5b88
 color9 #ff93a7
 color10 #58ffc7
-color11 #ffd9af
+color11 #ffecb8
 color12 #82aaff
 color13 #d2a6ef
-color14 #57f9ff
-color15 #c5cee0
+color14 #5ce1ff
+color15 #c5cde0
 
 # extended colors
-color16 #ffbf7a
-color17 #ffd9af
+color16 #ffd1ad
+color17 #ffecb8

@@ -200,32 +200,32 @@ Expected: FAIL with `Cannot find module './electron-dark'`.
 const base = {
   background: '#24283b',
   foreground: '#a8b5d1',
-  comment: '#7c8eac',   // hyper dark "lightBlack"
-  dim: '#545c7e',       // dark UI dim
-  lightGray: '#1b212c', // tmux dark surface / hyper tab-nav background
-  selection: '#283457',
+  comment: '#7586b3',   // unified neutral ramp (bg H230 -> fg H221)
+  dim: '#4d5a85',       // unified neutral ramp
+  lightGray: '#1b1e2c', // unified neutral ramp
+  selection: '#2b3254',
   cursor: '#a8b5d1',
-  cursorText: '#1a1b26',
+  cursorText: '#181b28',
 }
 
 const accents = {
   red: '#f7768e',
-  orange: '#ffbf7a',
-  yellow: '#ffd9af',
+  orange: '#ffd1ad',
+  yellow: '#ffecb8',
   green: '#58ffc7',
-  cyan: '#57f9ff',
+  cyan: '#5ce1ff',
   blue: '#82aaff',
   purple: '#d2a6ef',
-  pink: '#ff75a0', // unused by renderers; chosen complement to red/purple
+  pink: '#f4a8d8', // soft orchid pink; consumed by the fish + zed themes
 }
 
 // ANSI 0-17, from the ghostty reference palette. Conventional dark mapping:
 // "black" slots hold dark colors, "white" slots hold light readable colors.
 const ansi = {
   0: '#15161e', 1: accents.red, 2: accents.green, 3: accents.yellow,
-  4: accents.blue, 5: accents.purple, 6: accents.cyan, 7: '#7c8eac',
-  8: '#506686', 9: '#ff93a7', 10: accents.green, 11: accents.yellow,
-  12: accents.blue, 13: accents.purple, 14: accents.cyan, 15: '#c5cee0',
+  4: accents.blue, 5: accents.purple, 6: accents.cyan, 7: '#7586b3',
+  8: '#4e5b88', 9: '#ff93a7', 10: accents.green, 11: accents.yellow,
+  12: accents.blue, 13: accents.purple, 14: accents.cyan, 15: '#c5cde0',
   16: accents.orange, 17: accents.yellow,
 }
 
@@ -236,11 +236,11 @@ const roles = {
   tmuxDir: accents.purple,
   tmuxTime: accents.cyan,
   tmuxMessage: '#34febb',
-  tmuxPaneBorder: '#3b4261',
-  hyperTabNavBg: '#1b212c',
-  hyperTabText: '#7c8eac',
-  hyperTabTextActive: '#d5d9e2',
-  hyperBorder: '#141820',
+  tmuxPaneBorder: '#3a4262',
+  hyperTabNavBg: '#1b1e2c',
+  hyperTabText: '#7586b3',
+  hyperTabTextActive: '#d0d7e7',
+  hyperBorder: '#141620',
   hyperLink: accents.cyan,
 }
 

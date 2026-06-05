@@ -8,11 +8,11 @@ colors:
   # Cursor colors
   cursor:
     cursor: '0xa8b5d1'
-    text:   '0x1a1b26'
+    text:   '0x181b28'
 
   # Selection colors
   selection:
-    background: '0x283457'
+    background: '0x2b3254'
     text:       '0xa8b5d1'
 
   # Normal colors
@@ -20,23 +20,23 @@ colors:
     black:   '0x15161e'
     red:     '0xf7768e'
     green:   '0x58ffc7'
-    yellow:  '0xffd9af'
+    yellow:  '0xffecb8'
     blue:    '0x82aaff'
     magenta: '0xd2a6ef'
-    cyan:    '0x57f9ff'
-    white:   '0x7c8eac'
+    cyan:    '0x5ce1ff'
+    white:   '0x7586b3'
 
   # Bright colors
   bright:
-    black:   '0x506686'
+    black:   '0x4e5b88'
     red:     '0xff93a7'
     green:   '0x58ffc7'
-    yellow:  '0xffd9af'
+    yellow:  '0xffecb8'
     blue:    '0x82aaff'
     magenta: '0xd2a6ef'
-    cyan:    '0x57f9ff'
-    white:   '0xc5cee0'
+    cyan:    '0x5ce1ff'
+    white:   '0xc5cde0'
 
   indexed_colors:
-    - { index: 16, color: '0xffbf7a' }
-    - { index: 17, color: '0xffd9af' }
+    - { index: 16, color: '0xffd1ad' }
+    - { index: 17, color: '0xffecb8' }

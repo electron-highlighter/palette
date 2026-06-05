@@ -53,36 +53,36 @@ Dark values, mapped from ghostty:
 base:
   background  #24283b
   foreground  #a8b5d1
-  selection   #283457
+  selection   #2b3254
   cursor      #a8b5d1
-  cursorText  #1a1b26
-  comment     #7c8eac   # derived: hyper dark "lightBlack"
-  dim         #545c7e   # derived: dark UI dim (committed kitty inactive_tab_fg)
-  lightGray   #1b212c   # derived: tmux dark "black" surface
+  cursorText  #181b28
+  comment     #7586b3   # unified neutral ramp (bg H230 -> fg H221)
+  dim         #4d5a85   # unified neutral ramp
+  lightGray   #1b1e2c   # unified neutral ramp
 
 accents:
-  red #f7768e  orange #ffbf7a  yellow #ffd9af  green #58ffc7
-  cyan #57f9ff  blue #82aaff  purple #d2a6ef  pink #ff75a0*
+  red #f7768e  orange #ffd1ad  yellow #ffecb8  green #58ffc7
+  cyan #5ce1ff  blue #82aaff  purple #d2a6ef  pink #f4a8d8
 
 ansi (from ghostty palette):
-  0 #15161e   1 #f7768e   2 #58ffc7   3 #ffd9af
-  4 #82aaff   5 #d2a6ef   6 #57f9ff   7 #7c8eac
-  8 #506686   9 #ff93a7  10 #58ffc7  11 #ffd9af
- 12 #82aaff  13 #d2a6ef  14 #57f9ff  15 #c5cee0
- 16 #ffbf7a  17 #ffd9af
+  0 #15161e   1 #f7768e   2 #58ffc7   3 #ffecb8
+  4 #82aaff   5 #d2a6ef   6 #5ce1ff   7 #7586b3
+  8 #4e5b88   9 #ff93a7  10 #58ffc7  11 #ffecb8
+ 12 #82aaff  13 #d2a6ef  14 #5ce1ff  15 #c5cde0
+ 16 #ffd1ad  17 #ffecb8
 
 roles (from committed dark tmux + hyper configs, which agree):
-  tmuxActive    #58ffc7   tmuxInactive  #82aaff   tmuxSession #ffd9af
-  tmuxDir       #d2a6ef   tmuxTime      #57f9ff   tmuxMessage #34febb
-  tmuxPaneBorder #3b4261
-  hyperTabNavBg #1b212c   hyperTabText  #7c8eac   hyperTabTextActive #d5d9e2
-  hyperBorder   #141820   hyperLink     #57f9ff
+  tmuxActive    #58ffc7   tmuxInactive  #82aaff   tmuxSession #ffecb8
+  tmuxDir       #d2a6ef   tmuxTime      #5ce1ff   tmuxMessage #34febb
+  tmuxPaneBorder #3a4262
+  hyperTabNavBg #1b1e2c   hyperTabText  #7586b3   hyperTabTextActive #d0d7e7
+  hyperBorder   #141620   hyperLink     #5ce1ff
 ```
 
-`*pink`: ghostty defines no pink, and **no renderer consumes `accents.pink`** —
-it exists only so the validation test passes. Chosen as `#ff75a0`, a vivid pink
-sitting between the dark red (`#f7768e`) and purple (`#d2a6ef`) and readable on
-the `#24283b` background. Easily tunable later; it affects no output file.
+`pink`: now `#f4a8d8`, a soft orchid pink matching the pastel dark accents. It is
+consumed by the fish theme (keyword/escape) and the Zed theme. (Originally a
+tunable placeholder `#ff75a0` that no renderer used; revisited once fish adopted
+it and retuned for cohesion with the rest of the palette.)
 
 ### 2. `electron-day.js` (modified)
 

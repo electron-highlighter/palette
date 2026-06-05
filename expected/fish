@@ -4,7 +4,7 @@ set -l selection d6def5
 set -l comment 7b88a8
 set -l red f52a65
 set -l orange f0633c
-set -l yellow d18a16
+set -l yellow df8e1d
 set -l green 10a877
 set -l blue 366ff0
 set -l purple 8b4fe0

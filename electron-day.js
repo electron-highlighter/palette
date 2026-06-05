@@ -16,7 +16,7 @@ const base = {
 const accents = {
   red: '#f52a65',
   orange: '#f0633c',
-  yellow: '#d18a16',
+  yellow: '#df8e1d', // Latte-style gold; favors vibrance over strict contrast
   green: '#10a877',
   cyan: '#0a9fbf',
   blue: '#366ff0',
